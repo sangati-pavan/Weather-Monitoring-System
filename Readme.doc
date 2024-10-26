@@ -1,0 +1,101 @@
+Real-Time Weather Monitoring System 
+
+Overview :
+
+    The Real-Time Weather Monitoring System is a full-stack application that retrieves and processes weather data from the OpenWeatherMap API. The system continuously fetches weather data for major metros in India, calculates daily weather summaries, and sends alerts based on user-defined thresholds.
+
+1. Features :
+
+    Real-Time Data Fetching: Continuously retrieves weather data every 5 minutes.
+    Daily Weather Summaries: Aggregates daily weather information including average, maximum, and minimum temperatures, as well as dominant weather conditions.
+    User Configurable Alerts: Users can set thresholds for temperature alerts.
+    Data Visualization: Displays historical weather trends and summaries.
+    Email Notifications: Sends alerts via email when weather conditions breach user-defined thresholds.
+    Extended Parameters: Supports additional weather parameters like humidity and wind speed.
+
+2. Technologies Used :
+
+    2.1 Backend:
+
+        Node.js
+        Express.js
+        MongoDB (Mongoose)
+        Axios (for API calls)
+        Node-Cron (for scheduling tasks)
+        Nodemailer (for sending emails)
+
+    2.2 Frontend:
+
+        React.js
+        Axios (for API calls)
+
+3. Getting Started :
+
+    3.1 Prerequisites :
+
+        Node.js (v12 or higher)
+        MongoDB
+        A free API key from OpenWeatherMap (https://openweathermap.org/)
+        Email account for sending alerts (e.g., Gmail)
+
+    3.2 Installation :
+
+        Clone the Repository
+        git clone https://github.com/sangati-pavan/Weather-Monitoring-System.git
+    
+    3.3 Backend Setup :
+
+        Navigate to the backend directory:
+            cd backend
+
+        Install dependencies:
+            npm install
+
+        Create a .env file in the backend directory and add the following:
+       
+            PORT=5000
+            MONGO_URI=your_mongodb_connection_string
+            OPENWEATHER_API_KEY=your_openweather_api_key
+            ALERT_THRESHOLD=35
+            ALERT_RECIPIENT_EMAIL=recipient@example.com
+            HISTORICAL_DAYS=7
+            EMAIL_USER=your_email@example.com
+            EMAIL_PASSWORD=your_email_password
+
+        Start the backend server:
+          npm start
+
+    3.4 Frontend Setup :
+
+    Open a new terminal and navigate to the frontend directory:
+        cd frontend
+
+    Install dependencies:
+        npm install
+
+    Start the frontend application:
+        npm start
+        
+    Access the Application
+        Open your web browser and navigate to http://localhost:3000 to access the application.
+
+4. Usage :
+
+    Configure the alert threshold by entering a new value in the input field and clicking "Set Alert Threshold."
+    The dashboard will display daily weather summaries, including temperature, humidity, and wind speed.
+    Alerts will be sent to the configured email when the temperature exceeds the defined threshold.
+
+5. Testing :
+
+    5.1 Test Cases :
+
+        System Setup: Verify that the system starts successfully and connects to the OpenWeatherMap API using a valid API key.
+        Data Retrieval: Ensure the system retrieves weather data for the specified locations and parses the response correctly.
+        Temperature Conversion: Test conversion of temperature values from Kelvin to Celsius.
+        Daily Weather Summary: Simulate a sequence of weather updates and verify that daily summaries are calculated correctly.
+        Alerting Thresholds: Define and configure user thresholds for temperature and verify that alerts are triggered when thresholds are violated.
+
+5. Bonus Features :
+
+    Extend the system to support additional weather parameters from the OpenWeatherMap API (e.g., humidity, wind speed) and incorporate them into rollups/aggregates.
+    Explore functionalities like weather forecasts retrieval and generating summaries based on predicted conditions.
